@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -29,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String ShowVal = "0";
   String Operator = "";
   double result = 0;
-  @override 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Calculater")),
@@ -45,10 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "7";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "7";
                         ShowVal = num2;
                       }
@@ -61,10 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "8";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "8";
                         ShowVal = num2;
                       }
@@ -77,10 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "9";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "9";
                         ShowVal = num2;
                       }
@@ -107,10 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "4";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "4";
                         ShowVal = num2;
                       }
@@ -123,10 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "5";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "5";
                         ShowVal = num2;
                       }
@@ -139,10 +138,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "6";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "6";
                         ShowVal = num2;
                       }
@@ -169,10 +168,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "1";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "1";
                         ShowVal = num2;
                       }
@@ -185,10 +184,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "2";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "2";
                         ShowVal = num2;
                       }
@@ -201,10 +200,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "3";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "3";
                         ShowVal = num2;
                       }
@@ -231,10 +230,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
+                      if (Operator.isEmpty) {
                         num1 += "0";
                         ShowVal = num1;
-                      }else{
+                      } else {
                         num2 += "0";
                         ShowVal = num2;
                       }
@@ -260,24 +259,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(num1 == "" || num2 == "") return;
-                      if(Operator == "+"){
+                      if (num1 == "" || num2 == "") return;
+                      if (Operator == "+") {
                         result = double.parse(num1) + double.parse(num2);
-                      }else if (Operator == "-") {
+                      } else if (Operator == "-") {
                         result = double.parse(num1) - double.parse(num2);
-                      }else if (Operator == "*") {
+                      } else if (Operator == "*") {
                         result = double.parse(num1) * double.parse(num2);
-                      }else if (Operator == "/") {
+                      } else if (Operator == "/") {
                         result = double.parse(num1) / double.parse(num2);
-                      }else if (Operator == "%") {
-                        result = (double.parse(num1) / 100) * double.parse(num2);
-                      }else if (Operator == "^") {
-                        result = pow(double.parse(num1), double.parse(num2)).toDouble();
+                      } else if (Operator == "%") {
+                        result =
+                            (double.parse(num1) / 100) * double.parse(num2);
+                      } else if (Operator == "^") {
+                        result = pow(
+                          double.parse(num1),
+                          double.parse(num2),
+                        ).toDouble();
                       }
-                      ShowVal = result.toString();      
+                      ShowVal = result.toString();
                       num1 = result.toString();
                       num2 = "";
-                      Operator = "";             
+                      Operator = "";
                     });
                   },
                   child: Text("=", style: TextStyle(fontSize: 30)),
@@ -293,7 +296,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(width: 10),
               ],
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 20),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -301,13 +304,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty){
-                        if(num1.isNotEmpty){
+                      if (Operator.isEmpty) {
+                        if (num1.isNotEmpty) {
                           num1 = num1.substring(0, num1.length - 1);
                           ShowVal = num1;
                         }
-                      }else{
-                        if(num2.isNotEmpty){
+                      } else {
+                        if (num2.isNotEmpty) {
                           num2 = num2.substring(0, num2.length - 1);
                           ShowVal = num2;
                         }
@@ -341,7 +344,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      if(Operator.isEmpty && num1.isNotEmpty){
+                      if (Operator.isEmpty && num1.isNotEmpty) {
                         result = sqrt(double.parse(num1));
                         ShowVal = result.toString();
                       }
@@ -355,7 +358,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 20),
           ],
         ),
-      ) 
+      ),
     );
   }
 }
